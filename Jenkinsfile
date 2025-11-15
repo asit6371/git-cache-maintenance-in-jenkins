@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<your-username>/git-cache-maintenance.git'
+                git branch: 'main', url: 'https://github.com/asit6371/git-cache-maintenance-in-jenkins.git'
             }
         }
         stage('Git Cache Maintenance') {
             steps {
                 echo 'Running Git Cache Cleanup...'
-                sh 'git gc --prune=now --aggressive'
+                bat 'git gc --prune=now --aggressive'
                 echo 'Cleanup completed successfully.'
             }
         }
