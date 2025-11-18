@@ -8,10 +8,11 @@ pipeline {
         }
 
        stage('Disk Space Before Cleanup') {
-    steps {
-        echo '📊 Disk space BEFORE cleanup'
-        sh 'dir C:\\'
-    }
+    sh '''
+        echo "Disk space BEFORE cleanup:"
+        df -h
+    '''
+  }
 }
 
 stage('Disk Space After Cleanup') {
