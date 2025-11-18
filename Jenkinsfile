@@ -10,14 +10,14 @@ pipeline {
        stage('Disk Space Before Cleanup') {
     steps {
         echo '📊 Disk space BEFORE cleanup'
-        bat 'dir C:\\'
+        sh 'dir C:\\'
     }
 }
 
 stage('Disk Space After Cleanup') {
     steps {
         echo '📊 Disk space AFTER cleanup'
-        bat 'dir C:\\'
+        sh 'dir C:\\'
     }
 }
 
